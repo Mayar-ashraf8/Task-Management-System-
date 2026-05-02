@@ -1,6 +1,6 @@
 # Task Management System
 
-## 📌 Overview
+
 A simple JavaFX desktop application that allows users to manage and organize their tasks.  
 The system supports adding new tasks, filtering tasks, counting tasks, and displaying summaries.
 
@@ -22,13 +22,13 @@ The system supports adding new tasks, filtering tasks, counting tasks, and displ
 - **model/** → Task class definition.
 - **Controller/** → Main controller logic (`MainfxmlController.java`).
 
-## 🛠️ Technologies Used
+-------Technologies Used
 - Java 8
 - JavaFX
 - NetBeans IDE
 - GitHub for version control
 
-## 🚀 How to Run
+---------How to Run
 1. Clone the repository:
    ```bash
    git clone https://github.com/Mayar-ashraf8/Task-Management-System-git.git
