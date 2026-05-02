@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="617.0" prefWidth="899.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MainfxmlController">
+   <top>
+      <VBox alignment="CENTER" prefHeight="126.0" prefWidth="853.0" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar fx:id="menuBar">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem fx:id="existbtn" mnemonicParsing="false" onAction="#existbtnHandle" text="Exist" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                        <Menu mnemonicParsing="false" text="Font Style">
+                           <items>
+                              <RadioMenuItem fx:id="boldbtn" mnemonicParsing="false" onAction="#boldbtnHandle" text="Bold">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="g1" />
+                                 </toggleGroup>
+                              </RadioMenuItem>
+                              <RadioMenuItem fx:id="italicbtn" mnemonicParsing="false" onAction="#italicbtnHandle" text="Italic" toggleGroup="$g1" />
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Font Family">
+                           <items>
+                              <RadioMenuItem fx:id="arialbtn" mnemonicParsing="false" onAction="#arialbtnHandle" text="Arial">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="g2" />
+                                 </toggleGroup>
+                              </RadioMenuItem>
+                              <RadioMenuItem fx:id="timesnewbtn" mnemonicParsing="false" onAction="#timesnewbtnHandle" text="Times New" toggleGroup="$g2" />
+                              <RadioMenuItem fx:id="SansSerif" mnemonicParsing="false" onAction="#SansSerifHandle" text="Sans Serif" toggleGroup="$g2" />
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Font Size">
+                           <items>
+                              <RadioMenuItem fx:id="smallbtn" mnemonicParsing="false" onAction="#smallbtnHandle" text="Small">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="g3" />
+                                 </toggleGroup>
+                              </RadioMenuItem>
+                              <RadioMenuItem fx:id="mediamfont" mnemonicParsing="false" onAction="#mediamfontHandle" text="Mediam" toggleGroup="$g3" />
+                              <RadioMenuItem fx:id="LargeFont" mnemonicParsing="false" onAction="#LargeFontHandle" text="Large" toggleGroup="$g3" />
+                           </items>
+                        </Menu>
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem fx:id="aboutbtn" mnemonicParsing="false" onAction="#aboutbtnHandle" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <Label alignment="CENTER" prefHeight="110.0" prefWidth="899.0" style="-fx-background-color: gray;" text="Task Managment System" />
+            <HBox alignment="CENTER" prefHeight="112.0" prefWidth="899.0">
+               <children>
+                  <Label fx:id="totaltaskLabel" prefHeight="38.0" prefWidth="284.0" text="Total Tasks:" />
+                  <Label fx:id="openTaskNum" prefHeight="40.0" prefWidth="315.0" text="Open Tasks:" />
+                  <Label fx:id="closedTaskNum" prefHeight="39.0" prefWidth="255.0" text="Closed Tasks:" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <VBox prefHeight="441.0" prefWidth="892.0" style="-fx-spacing: 15;" BorderPane.alignment="CENTER">
+         <children>
+            <HBox fx:id="addTaskSection" alignment="CENTER_LEFT" prefHeight="102.0" prefWidth="899.0" style="-fx-spacing: 5;" styleClass="Card">
+               <children>
+                  <Label style="-fx-label-padding: 5;" text="Name:" />
+                  <TextField fx:id="namefield" prefHeight="21.0" prefWidth="161.0" />
+                  <Label style="-fx-label-padding: 5;" text="Title:" />
+                  <TextField fx:id="titlefield" />
+                  <Label style="-fx-label-padding: 5;" text="Due Date:" />
+                  <DatePicker fx:id="datepicker" />
+                  <Label style="-fx-label-padding: 5;" text="Status:" />
+                  <ComboBox fx:id="statusField" prefWidth="150.0" />
+                  <Button fx:id="adddtaskbtn" mnemonicParsing="false" onAction="#adddtaskbtnHandle" text="Add Task" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="65.0" prefWidth="899.0" style="-fx-spacing: 10;" styleClass="Card">
+               <children>
+                  <Label prefHeight="36.0" prefWidth="93.0" text="Show Tasks by:">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="taskbynamefield" onAction="#taskbynamefieldHandle" prefHeight="38.0" prefWidth="160.0" />
+                  <Button fx:id="showfirst4taskbtn" mnemonicParsing="false" onAction="#showfirst4taskbtnHandle" text="Show First 4 Tasks" />
+                  <Button fx:id="findspecialtasksbtn" mnemonicParsing="false" onAction="#findspecialtasksbtnHandle" text="Find Special Tasks" />
+                  <TextField fx:id="usernametaskcountfield" promptText="Enter the User Name" />
+                  <Button fx:id="counttaskbtn" mnemonicParsing="false" onAction="#counttaskbtnHandle" prefHeight="26.0" prefWidth="132.0" text="Count Tasks" />
+                  <Label fx:id="topuser" prefHeight="18.0" prefWidth="108.0" text="Top User:" />
+               </children>
+            </HBox>
+            <ListView fx:id="ListView" prefHeight="266.0" prefWidth="899.0" VBox.vgrow="ALWAYS" />
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
